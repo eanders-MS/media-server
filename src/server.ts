@@ -1,4 +1,4 @@
-import RtspServer from 'rtsp-streaming-server'
+import RtspServer from 'rtsp-streaming-server';
 
 // Start media server
 const mediaServer = new RtspServer({
@@ -7,4 +7,9 @@ const mediaServer = new RtspServer({
     rtpPortStart: 10000,
     rtpPortCount: 10000
 });
-mediaServer.start();
+
+async function run() {
+    await mediaServer.start();
+}
+
+run().catch();
